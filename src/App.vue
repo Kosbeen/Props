@@ -10,6 +10,7 @@
     :email-adress="friend.email"
     :is-best="friend.isBest"
     @toggle-best="showBestone"
+    @delete="deleteContact"
   ></friend-contact>
 </template>
 <script>
@@ -48,6 +49,9 @@ export default {
         isFavorite: false,
       };
       this.friends.push(newFriendAdd);
+    },
+    deleteFriend(id) {
+      this.friends = this.friends.filter((friend) => friend.id !== id);
     },
   },
 };
