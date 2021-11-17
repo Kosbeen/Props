@@ -9,11 +9,13 @@
       <li>{{ phoneNumber }}</li>
       <li>{{ emailAdress }}</li>
     </ul>
+    <button @click="$emit('delete', this.id)">Delete</button>
   </li>
 </template>
 
 <script>
 export default {
+  emits: ["toggle-best", "delete"],
   props: {
     id: {
       type: String,
